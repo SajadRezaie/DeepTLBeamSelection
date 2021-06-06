@@ -1,0 +1,404 @@
+**********************************************************************************
+***** Project-File for Network Prediction ****************************************
+**********************************************************************************
+
+
+**********************************************************************************
+****** DEFINITION OF COORDINATE SYSTEM *******************************************
+**********************************************************************************
+COORD_SYSTEM_ELLIPSOID 1 
+COORD_SYSTEM_DATUM 0
+COORD_SYSTEM_GEO_UTM "UTM"
+COORD_SYSTEM_UTM_ZONE 5
+COORD_SYSTEM_UTM_HEMISPHERE N
+**********************************************************************************
+****** OUTPUT OF NETWORK PLANNING  ***********************************************
+**********************************************************************************
+* Basic name of all propagation output file **************************************
+OUTPUT_PROPAGATION_FILES "PropName- Anecho chamber"
+OUTPUT_PROPAGATION_MOBILE_STATION_FILES "MS Results"
+* Basic name of all Propagation projects *****************************************
+PROJECT_FILE "C:\Users\Sajad\Desktop\Projects\Anechoic Chamber\Anechoic_chamber_Proman"
+* Separate propagation results in individual directories (for each TRX) **********
+SEPARATION_DIRECTORY y
+* Show results in a seperate window **********************************************
+SHOW_RESULTS_IN_SEPARATE_WINDOW n
+* Simulate each carrier individually *********************************************
+SIMULATE_EACH_CARRIER_INDIVIDUALLY n
+COMPUTATION_REQUIRED y
+COMPUTATION_REQUIRED_EMC y
+* Write results (power matrices) to ASCII file which can be read with MS EXCEL ***
+EXCEL_OUTPUT n
+* Write results of propagation modules to ASCII files ****************************
+ASCII_OUTPUT_PROP n
+
+**********************************************************************************
+* Simulation/Planning Area *******************************************************
+**********************************************************************************
+COORDINATES_MODE 1
+COORDINATES_TYPE 1
+GRID_PREDICTION_MODE y
+SURFACE_PREDICTION_MODE n
+PLANES_PREDICTION_MODE n
+TRAJECTORY_PREDICTION_MODE n
+POINTS_PREDICTION_MODE n
+**********************************************************************************
+COORDINATES_AREA 0.6300000000 0.6000000000 6.5400000000 8.4100000000
+HEIGHT  1.00000 2.50000 4.00000 
+HEIGHT_THRESHOLD n 20.00
+HEIGHT_MODE 0
+RESOLUTION 0.0200000000
+CNP_HEIGHT_MODE 0
+HEIGHT_CNP  1.500 
+RESOLUTION_CNP 1.0000
+
+TIME_VARIANT TIME_VARIANT_MODE 0
+TIME_VARIANT TIME_VARIANT_START 0.000000
+TIME_VARIANT TIME_VARIANT_STOP 0.000000
+TIME_VARIANT TIME_VARIANT_INTERVAL 1.000000
+**********************************************************************************
+* Properties of Antenna at Mobile Station (for prediction pints) *****************
+**********************************************************************************
+* Type of antenna (either OMNI or PATTERN) ***************************************
+MOBILE_ANTENNA_MODE OMNI
+
+**********************************************************************************
+* Output of Propagation Models ***************************************************
+**********************************************************************************
+* Signal Level (Power, Path Loss, Field Strength) ********************************
+POWER y
+POWER_RUN_MS n
+FIELDSTRENGTH n
+PATH_LOSS n
+OFFSET_LEVEL 0.000
+* Delay Spread *******************************************************************
+DELAY_TIME n
+DELAY_SPREAD n
+* Angular Spread (Mobile Station) ************************************************
+ANGULAR_SPREAD_MS n
+* Angular Spread (Base Station) **************************************************
+ANGULAR_SPREAD_BS n
+* Angular Means *****************************************************************
+ANGULAR_MEANS n
+* LOS / NLOS (Line of Sight and Non line of sight) *******************************
+LOS_STATUS n
+* Number of interactions *********************************************************
+NR_INTERACTIONS n
+* Channel Impulse Response, Transmission Matrix and Propagation Paths ************
+RAY_PATHS n
+CHANNEL_IMPULSE_RESPONSE n
+TRANSMISSION_MATRIX n
+PROPAGATION_PATHS n
+* Further Propagation Results ****************************************************
+HEIGHT_PROFILE n
+MORPHO_DATA n
+MS_CLUTTER_HEIGHT n
+
+**********************************************************************************
+****** SETTINGS FOR SIMULATION ***************************************************
+**********************************************************************************
+* Type of computation (0 = propagation predictions, 20 = network simulations ****
+COMPUTATION_MODE 0
+
+**********************************************************************************
+****** TRAFFIC BASED ON CLUTTER DATABASES  ***************************************
+**********************************************************************************
+* Name of clutter/morpho database used as basis for traffic definitions ***
+CLUTTER_DATABASE_TRAFFIC "C:\Users\Sajad\Desktop\Projects\Anechoic Chamber\Anechoic_chamber.idb"
+CLUTTER_DATABASE_TRAFFIC_INDEX n
+CLUTTER_TABLE_TRAFFIC ""
+
+* Definition of transmission mode for cell assignment **************************
+TRANSMISSION_MODE_CA 0 SPREADING_FACTOR_DOWNLINK 256
+TRANSMISSION_MODE_CA 0 SNIR_DL 3.0000
+TRANSMISSION_MODE_CA 0 MIN_POWER_DL -150.0000
+TRANSMISSION_MODE_CA 0 BACKOFF_POWER_DL 0.000
+TRANSMISSION_MODE_CA 0 USE_MIN_POWER_DL N
+
+
+*******************************************************************************
+****** DEFINITION OF NEW SITE *************************************************
+*******************************************************************************
+
+***********************************************************************
+SITE 0 SITE_NAME "Site "
+SITE 0 SITE_LOCATION 0.0000000000 0.0000000000 0.0000000000
+SITE 0 MAX_USER 1000
+SITE 0 MAX_DATA_RATE 1000.000
+SITE 0 COUNTER_TRX 0
+***********************************************************************
+
+*******************************************************************************
+****** DEFINITION OF NEW TRX **************************************************
+*******************************************************************************
+***** Antenna modified since last path loss computation ***********************
+ANTENNA 0 MODIFIED y y
+***** Antenna enabled *********************************************************
+ANTENNA 0 DISABLED n
+***** Type of antenna (single antenna, radiating cable, repeater, etc.) *******
+* Single Antenna = 0, Radiating Cable = 3, Repeater = 4,... 
+ANTENNA 0 ANTENNA_TYPE 0
+***** Coordinates of the antenna      [x,y,z] *********************************
+ANTENNA 0 POSITION 0.0000000000, 0.0000000000, 2.5000000000 
+***** Name (ID) of the antenna / cell *****************************************
+ANTENNA 0 NAME "Antenna"
+***** Number of Site to which antenna belongs (-1 if no site) *****************
+ANTENNA 0 SITE_NUMBER -1
+***** Antenna type (ISO, SECTOR) *********************************************
+ANTENNA 0 TYPE ISO
+***** Transmitted power *******************************************************
+ANTENNA 0 POWER 10.00000
+***** Power unit **************************************************************
+ANTENNA 0 UNIT WATT
+***** Antenna Aperture ********************************************************
+ANTENNA 0 APERTURE_AUTO 1
+ANTENNA 0 ANTENNA_APERTURE 360.000
+***** Individual threshold for received power related to cell selection *******
+ANTENNA 0 INDIVIDUAL_THRESHOLD_CELL_SELECT 0
+***** Threshold for received power related to cell selection ******************
+ANTENNA 0 THRESHOLD_CELL_SELECT -100.000
+***** Individual threshold for max. radius related to cell selection **********
+ANTENNA 0 INDIVIDUAL_MAX_RADIUS 0
+***** Threshold for max. radius related to cell selection *********************
+ANTENNA 0 APERTURE_MAX_RADIUS 1000.000
+***** Power as output power (0), EIRP (1), ERP (2) *************************
+ANTENNA 0 POWER_MODE 0
+***** Type of power amplifier (0 = Single Carrier, 1 = Multi Carrier) *********
+ANTENNA 0 POWER_AMPLIFIER 0
+***** Transmitted frequency [MHz] *********************************************
+ANTENNA 0 FREQUENCY 2000.00
+***** Polarization ************************************************************
+ANTENNA 0 POLARIZATION 0
+ANTENNA 0 POLARIZATION_ANGLE 0.000
+ANTENNA 0 POLARIZATION_XPD 10.000
+ANTENNA 0 OPTIMIZER_TRX_PARA_MODE 0
+ANTENNA 0 OPTIMIZER_TRX_PARA_ORIENTATION 0.0 0.0 0.0 0.0 0.0 0.0
+***** TRX Properties of Transmitter *******************************************
+ANTENNA 0 TRX_PROPERTIES_INDIVIDUAL n
+ANTENNA 0 NOISEFIGURE 5.00000
+ANTENNA 0 KEYWORD_DIVERSITY_GAIN 0.00000
+***** Properties of Feeding Cable *********************************************
+* Feeding cable mode 0 = manual definition, 1 = geometrically defined  ******
+ANTENNA 0 ANTENNA_CABLE_LOSS_MODE 0
+ANTENNA 0 ANTENNA_CABLE_LOSS 0.00000
+***** Properties for (dynamic) WCDMA system simulator *************************
+ANTENNA 0 MAX_USER 1000
+ANTENNA 0 MAX_DATA_RATE 20000.00000
+ANTENNA 0 TDD_RATIO_INDIVIDUAL 0
+ANTENNA 0 OFDM_GUARD_INTERVAL_INDIVIDUAL 0
+
+ANTENNA 0 COMMON_CHANNEL_POWER 30.000
+ANTENNA 0 TRX_SIGNAL_DELAY 0.00000
+***** Prediction area for this transmitter ************************************
+*** (Default or individual) ***************************************************
+ANTENNA 0 PREDICTION_AREA_INDIVIDUAL n
+
+ANTENNA 0 PREDICTION_AREA AREA_MODE 2
+ANTENNA 0 PREDICTION_AREA COORDINATES_AREA -1.0000000000 -1.0000000000 8.0000000000 10.0000000000
+ANTENNA 0 PREDICTION_AREA RADIUS_AREA 20.0000000000
+
+
+*******************************************************************************
+****** DEFINITION OF DEFAULT TRX  *********************************************
+*******************************************************************************
+***** Antenna modified since last path loss computation ***********************
+ANTENNA -1 MODIFIED y y
+***** Antenna enabled *********************************************************
+ANTENNA -1 DISABLED n
+***** Type of antenna (single antenna, radiating cable, repeater, etc.) *******
+* Single Antenna = 0, Radiating Cable = 3, Repeater = 4,... 
+ANTENNA -1 ANTENNA_TYPE 0
+***** Coordinates of the antenna      [x,y,z] *********************************
+ANTENNA -1 POSITION 0.0000000000, 0.0000000000, 2.5000000000 
+***** Name (ID) of the antenna / cell *****************************************
+ANTENNA -1 NAME "Antenna"
+***** Number of Site to which antenna belongs (-1 if no site) *****************
+ANTENNA -1 SITE_NUMBER -1
+***** Antenna type (ISO, SECTOR) *********************************************
+ANTENNA -1 TYPE ISO
+***** Transmitted power *******************************************************
+ANTENNA -1 POWER 10.00000
+***** Power unit **************************************************************
+ANTENNA -1 UNIT WATT
+***** Antenna Aperture ********************************************************
+ANTENNA -1 APERTURE_AUTO 1
+ANTENNA -1 ANTENNA_APERTURE 360.000
+***** Individual threshold for received power related to cell selection *******
+ANTENNA -1 INDIVIDUAL_THRESHOLD_CELL_SELECT 0
+***** Threshold for received power related to cell selection ******************
+ANTENNA -1 THRESHOLD_CELL_SELECT -100.000
+***** Individual threshold for max. radius related to cell selection **********
+ANTENNA -1 INDIVIDUAL_MAX_RADIUS 0
+***** Threshold for max. radius related to cell selection *********************
+ANTENNA -1 APERTURE_MAX_RADIUS 1000.000
+***** Power as output power (0), EIRP (1), ERP (2) *************************
+ANTENNA -1 POWER_MODE 0
+***** Type of power amplifier (0 = Single Carrier, 1 = Multi Carrier) *********
+ANTENNA -1 POWER_AMPLIFIER 0
+***** Transmitted frequency [MHz] *********************************************
+ANTENNA -1 FREQUENCY 2000.00
+***** Polarization ************************************************************
+ANTENNA -1 POLARIZATION 0
+ANTENNA -1 POLARIZATION_ANGLE 0.000
+ANTENNA -1 POLARIZATION_XPD 10.000
+ANTENNA -1 OPTIMIZER_TRX_PARA_MODE 0
+ANTENNA -1 OPTIMIZER_TRX_PARA_ORIENTATION 0.0 0.0 0.0 0.0 0.0 0.0
+***** TRX Properties of Transmitter *******************************************
+ANTENNA -1 TRX_PROPERTIES_INDIVIDUAL n
+ANTENNA -1 NOISEFIGURE 5.00000
+ANTENNA -1 KEYWORD_DIVERSITY_GAIN 0.00000
+***** Properties of Feeding Cable *********************************************
+* Feeding cable mode 0 = manual definition, 1 = geometrically defined  ******
+ANTENNA -1 ANTENNA_CABLE_LOSS_MODE 0
+ANTENNA -1 ANTENNA_CABLE_LOSS 0.00000
+***** Properties for (dynamic) WCDMA system simulator *************************
+ANTENNA -1 MAX_USER 1000
+ANTENNA -1 MAX_DATA_RATE 20000.00000
+ANTENNA -1 TDD_RATIO_INDIVIDUAL 0
+ANTENNA -1 OFDM_GUARD_INTERVAL_INDIVIDUAL 0
+
+ANTENNA -1 COMMON_CHANNEL_POWER 30.000
+ANTENNA -1 TRX_SIGNAL_DELAY 0.00000
+***** Prediction area for this transmitter ************************************
+*** (Default or individual) ***************************************************
+ANTENNA -1 PREDICTION_AREA_INDIVIDUAL n
+
+ANTENNA -1 PREDICTION_AREA AREA_MODE 2
+ANTENNA -1 PREDICTION_AREA COORDINATES_AREA -1.0000000000 -1.0000000000 8.0000000000 10.0000000000
+ANTENNA -1 PREDICTION_AREA RADIUS_AREA 20.0000000000
+
+
+*******************************************************************************
+****** DEFINITION OF SITES ****************************************************
+*******************************************************************************
+
+
+***********************************************************************
+SITE 1 SITE_NAME "Site  1"
+SITE 1 SITE_LOCATION 3.5000000000 4.5000000000 2.5000000000
+SITE 1 MAX_USER 1000
+SITE 1 MAX_DATA_RATE 1000.000
+SITE 1 COUNTER_TRX 1
+***********************************************************************
+
+*******************************************************************************
+****** DEFINITION OF TRANSMITTERS *********************************************
+*******************************************************************************
+*******************************************************************************
+***** Basestation / Antenna / Cell    No   1 **********************************
+*******************************************************************************
+***** Antenna modified since last path loss computation ***********************
+ANTENNA 1 MODIFIED n y
+***** Antenna enabled *********************************************************
+ANTENNA 1 DISABLED n
+***** Type of antenna (single antenna, radiating cable, repeater, etc.) *******
+* Single Antenna = 0, Radiating Cable = 3, Repeater = 4,... 
+ANTENNA 1 ANTENNA_TYPE 0
+***** Coordinates of the antenna      [x,y,z] *********************************
+ANTENNA 1 POSITION 3.5000000000, 4.5000000000, 2.5000000000 
+***** Name (ID) of the antenna / cell *****************************************
+ANTENNA 1 NAME "Site  1 Antenna 1"
+***** Number of Site to which antenna belongs (-1 if no site) *****************
+ANTENNA 1 SITE_NUMBER 1
+***** Antenna type (ISO, SECTOR) *********************************************
+ANTENNA 1 TYPE ISO
+***** Gain of Antenna *********************************************************
+ANTENNA 1 ANTENNA_GAIN 0.000
+***** Transmitted power *******************************************************
+ANTENNA 1 POWER 1.00000
+***** Power unit **************************************************************
+ANTENNA 1 UNIT WATT
+***** Antenna Aperture ********************************************************
+ANTENNA 1 APERTURE_AUTO 1
+ANTENNA 1 ANTENNA_APERTURE 360.000
+***** Individual threshold for received power related to cell selection *******
+ANTENNA 1 INDIVIDUAL_THRESHOLD_CELL_SELECT 0
+***** Threshold for received power related to cell selection ******************
+ANTENNA 1 THRESHOLD_CELL_SELECT -100.000
+***** Individual threshold for max. radius related to cell selection **********
+ANTENNA 1 INDIVIDUAL_MAX_RADIUS 0
+***** Threshold for max. radius related to cell selection *********************
+ANTENNA 1 APERTURE_MAX_RADIUS 1000.000
+***** Power as output power (0), EIRP (1), ERP (2) *************************
+ANTENNA 1 POWER_MODE 0
+***** Type of power amplifier (0 = Single Carrier, 1 = Multi Carrier) *********
+ANTENNA 1 POWER_AMPLIFIER 0
+***** Transmitted frequency [MHz] *********************************************
+ANTENNA 1 FREQUENCY 60000.00
+***** Polarization ************************************************************
+ANTENNA 1 POLARIZATION 0
+ANTENNA 1 POLARIZATION_ANGLE 0.000
+ANTENNA 1 POLARIZATION_XPD 10.000
+ANTENNA 1 OPTIMIZER_TRX_PARA_MODE 0
+ANTENNA 1 OPTIMIZER_TRX_PARA_ORIENTATION 0.0 0.0 0.0 0.0 0.0 0.0
+***** TRX Properties of Transmitter *******************************************
+ANTENNA 1 TRX_PROPERTIES_INDIVIDUAL n
+ANTENNA 1 NOISEFIGURE 5.00000
+ANTENNA 1 KEYWORD_DIVERSITY_GAIN 0.00000
+***** Properties of Feeding Cable *********************************************
+* Feeding cable mode 0 = manual definition, 1 = geometrically defined  ******
+ANTENNA 1 ANTENNA_CABLE_LOSS_MODE 0
+ANTENNA 1 ANTENNA_CABLE_LOSS 0.00000
+***** Properties for (dynamic) WCDMA system simulator *************************
+ANTENNA 1 MAX_USER 1000
+ANTENNA 1 MAX_DATA_RATE 20000.00000
+ANTENNA 1 TDD_RATIO_INDIVIDUAL 0
+ANTENNA 1 OFDM_GUARD_INTERVAL_INDIVIDUAL 0
+
+ANTENNA 1 COMMON_CHANNEL_POWER 30.000
+ANTENNA 1 TRX_SIGNAL_DELAY 0.00000
+***** Prediction area for this transmitter ************************************
+*** (Default or individual) ***************************************************
+ANTENNA 1 PREDICTION_AREA_INDIVIDUAL n
+
+
+*******************************************************************************
+
+****** Reference TRX (Antenna) for signal delays ******************************
+
+*******************************************************************************
+REFERENCE_TRX -100
+
+**********************************************************************************
+****** DEFINITION OF PROPAGATION ENVIRONMENT *************************************
+**********************************************************************************
+* Rural Prediction Model Used [y/n]                                              *
+SCENARIO_RURAL n
+* Urban Prediction Model Used [y/n]                                              *
+SCENARIO_URBAN n
+* Indoor Prediction Model Used [y/n]                                              *
+SCENARIO_INDOOR y
+* Only propagation analysis (y) or additionally network planning included (n)     *
+NETWORK_INCLUDED y
+
+* Polarimetric Analysis:
+  Full (limited selection of scenarios and propagation models) [y]
+*  Standard (suitable for all scenarios and propagation models) [n]
+
+**********************************************************************************
+ANTENNA_ONLY_FULLPOLARIMETRIC y
+************************************************************************************
+****** PROPERTIES OF COMPONENT REPORTS *********************************************
+************************************************************************************
+COMPONENT_REPORT OUTPUT_CSV y
+COMPONENT_REPORT OUTPUT_PDF y
+COMPONENT_REPORT OUTPUT_TXT y
+COMPONENT_REPORT RESULT_TYPE 0
+
+
+************************************************************************************
+****** PROPERTIES OF TRAFFIC REPORTS ***********************************************
+************************************************************************************
+NETWORK_REPORT NETWORK_REPORT_EACH_ITERATION n
+NETWORK_REPORT NETWORK_REPORT_CLUTTER_INDIVIDUAL y
+NETWORK_REPORT NETWORK_REPORT_APPLICATION_INDIVIDUAL y
+NETWORK_REPORT NETWORK_REPORT_FUS_DURING_MONTE_CARLO n
+NETWORK_REPORT NETWORK_REPORT_FILE_FORMATR_CSV n
+**********************************************************************************
+****** DEFINITION OF PARAMETERS FOR AUTO-GENERATION OF NAMES IN GUI **************
+**********************************************************************************
+COUNTER_SITE 1
+COUNTER_TRX 1
+COUNTER_COMPONENT 1
+**********************************************************************************
+**********************************************************************************

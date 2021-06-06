@@ -1,0 +1,250 @@
+*******************************************************************************
+***** Project-File for Indoor-Prediction **************************************
+*******************************************************************************
+
+*******************************************************************************
+***** Output ******************************************************************
+*******************************************************************************
+***** Prediction for outdoor pixels (y/n)  ************************************
+OUTDOOR_PREDICTION y
+***** In case of topo: Absolute or relative prediction height *****************
+ABSOLUTE_HEIGHT n
+
+
+*******************************************************************************
+***** Database ****************************************************************
+*******************************************************************************
+***** Database-Filename (without extension) ***********************************
+DATABASE_FILE "C:\Users\Sajad\Desktop\Projects\Living Room\Living_room"
+***** Mode of database (Empirical = 16, SRT = 15, IRT = 13, IDP = 17) *********
+DATABASE_MODE 11
+***** Consideration of subdivisions in the database (doors, windows) **********
+SUBDIVISIONS y
+***** Consideration of furniture objects in database **************************
+CONSIDER_FURNITURE y
+***** Consider additional topography database? ********************************
+CONSIDER_TOPOGRAPHY n
+***** Topography Database (filename with extension) ***************************
+TOPOGRAPHY_DATABASE_FILE ""
+***** Shift objects by topography? ********************************************
+TOPOGRAPHY_SHIFT_OBJECTS n
+***** Different materials considered [y/n] ************************************
+MATERIAL_PROPERTIES y
+***** Correction of multiple definition of identical walls [y/n] **************
+MULTIPLE_WALL_CORRECTION n
+MULTIPLE_WALL_DISTANCE 0.100
+
+*******************************************************************************
+***** Parameters for the default material properties **************************
+*******************************************************************************
+***** (Default-values, if no material database is selected) *******************
+***** Dielectricity [As/Vm] ***************************************************
+DIELECTRICITY 4.000000
+***** Permeability [Vs/Am] ****************************************************
+PERMEABILITY 1.000000
+***** Conductivity [S] ********************************************************
+CONDUCTIVITY 0.0100000
+***** Scattering factor VV [] *************************************************
+SCATTERING_VV 1.0000
+***** Scattering factor VH [] *************************************************
+SCATTERING_VH 0.0000
+***** Scattering factor HV [] *************************************************
+SCATTERING_HV 0.0000
+***** Scattering factor HH [] *************************************************
+SCATTERING_HH 1.0000
+***** Diffraction loss incident part (min) [dB] *******************************
+DIFFRACTION_LOSS_IN_MIN 8.0000
+***** Diffraction loss incident part (max) [dB] *******************************
+DIFFRACTION_LOSS_IN_MAX 15.0000
+***** Diffraction loss diffracted part [dB] ***********************************
+DIFFRACTION_LOSS_OUT 5.0000
+***** Additional Diffraction Loss [dB] if wedge is parallel to linear polariz.*
+ADD_DIFFRACTION_LOSS_PARALLEL_WEDGES 0.0000
+***** Reflection loss [dB] ****************************************************
+REFLECTION_LOSS 9.0000
+***** Scattering loss [dB] ****************************************************
+SCATTERING_LOSS 20.0000
+***** Transmission loss [dB] **************************************************
+TRANSMISSION_LOSS 10.0000
+
+*******************************************************************************
+***** Parameters for the ground material properties **************************
+*******************************************************************************
+***** (Default-values, if no material database is selected) *******************
+***** Dielectricity [As/Vm] ***************************************************
+GROUND_DIELECTRICITY 15.000000
+***** Permeability [Vs/Am] ****************************************************
+GROUND_PERMEABILITY 1.000000
+***** Conductivity [S] ********************************************************
+GROUND_CONDUCTIVITY 0.0100000
+***** Scattering factor VV [] *************************************************
+GROUND_SCATTERING_VV 0.4000
+***** Scattering factor VH [] *************************************************
+GROUND_SCATTERING_VH 0.0000
+***** Scattering factor HV [] *************************************************
+GROUND_SCATTERING_HV 0.0000
+***** Scattering factor HH [] *************************************************
+GROUND_SCATTERING_HH 0.4000
+***** Diffraction loss incident part (min) [dB] *******************************
+GROUND_DIFFRACTION_LOSS_IN_MIN 8.0000
+***** Diffraction loss incident part (max) [dB] *******************************
+GROUND_DIFFRACTION_LOSS_IN_MAX 15.0000
+***** Diffraction loss diffracted part [dB] ***********************************
+GROUND_DIFFRACTION_LOSS_OUT 5.0000
+***** Reflection loss [dB] ****************************************************
+GROUND_REFLECTION_LOSS 9.0000
+***** Scattering loss [dB] ****************************************************
+GROUND_SCATTERING_LOSS 20.0000
+***** Transmission loss [dB] **************************************************
+GROUND_TRANSMISSION_LOSS 500.0000
+
+*******************************************************************************
+***** Prediction models *******************************************************
+*******************************************************************************
+** (IRT = 1, SRT = 2, DPM = 4, COST = 6, Motley = 7, One Slope = 8) ***********
+PREDICTION_MODEL 2
+** (SDM = 1, STL = 2, SPL = 3) ************************************************
+PREDICTION_MODEL_CABLE 1
+***** Computation of field strength: Empirical [e] or Fresnel and GTD/UTD [g] *
+DIFFRACTION_MODEL e
+
+*******************************************************************************
+***** Model Parameter *********************************************************
+*******************************************************************************
+***** Parameters for all propagation models ***********************************
+***** Parameters for frequency dependent losses *******************************
+FREQUENCY_DEPENDENT_LOSSES ENABLED n
+***** Full polarimetric computations ******************************************
+FULL_POLARIMETRIC n
+***** One Slope Model (Modified Free Space) ***********************************
+PARAMETER_MFS EXPONENT_LOS 2.00
+PARAMETER_MFS EXPONENT_NLOS 2.00
+PARAMETER_MFS OFFSET_VALUE_LOS 0.00
+PARAMETER_MFS OFFSET_VALUE_NLOS 0.00
+
+***** Motley-Keenan Model *****************************************************
+PARAMETER_MK TRANSMISSION_LOSS_WALL 4.00
+PARAMETER_MK TRANSMISSION_LOSS_ROOF 10.00
+
+***** Multi Wall Model ********************************************************
+PARAMETER_MULTI_WALL ADAPTIVE_TRANSMISSION_LOSS n
+PARAMETER_MULTI_WALL TRANSMISSION_REDUCTION_FACTOR 50.00
+PARAMETER_MULTI_WALL ADAPTIVE_TRANSMISSION_MODE 0
+PARAMETER_MULTI_WALL TRANSMISSION_LOSS_ANGLE_DEPENDENCY n
+PARAMETER_MULTI_WALL RADIAL_MODE_2D n
+PARAMETER_MULTI_WALL RADIAL_MODE_WITH_3D y
+PARAMETER_MULTI_WALL RADIAL_MODE_RADIUS_3D 15.000
+PARAMETER_MULTI_WALL PATH_LOSS_EXPONENT_LOS 2.000
+PARAMETER_MULTI_WALL PATH_LOSS_EXPONENT_NLOS 2.000
+
+***** Prediction Models for Radiating Cables **********************************
+PARAMETER_RAD_CABLE_MODEL 2.00 2.00 2.50 n
+*******************************************************************************
+***** Parameter for the deterministic models **********************************
+*******************************************************************************
+***** Superposition of the contributions (PHASE or POWER) *********************
+SUPERPOSITION PHASE
+RX_POLARISATION 0
+***** Compute direct ray between transmitter and receiver *********************
+** (Respect to limitations = 0, Always = 1, Never = 2) ************************
+COMPUTE_DIRECT_RAY 1
+*******************************************************************************
+***** Parameters for the determination of the rays with deterministic models **
+***** Number of interactions **************************************************
+INTERACTIONS_MAX 2
+MAX_TRANSMISSIONS 3
+MAX_REFLECTIONS 2
+MAX_DIFFRACTIONS 1
+MAX_SCATTERINGS 0
+***** Path Loss Exponent ******************************************************
+PATH_LOSS_EXPONENT_RT 2.000000
+PARAMETER_RAY_TRACING TRANSMISSION_LOSS_ANGLE_DEPENDENCY y
+RT_GROUND_REFLECTIONS n
+RT_GROUND_DIFFRACTIONS n
+RT_GROUND_SCATTERING n
+RT_RESOLUTION_GROUND_SCATTERING 50.000000
+RT_MULTIPLE_GROUND_INTERACTIONS n
+*******************************************************************************
+***** Parameters of the SRT (Standard Ray Tracing) ****************************
+*******************************************************************************
+SRT_FRESNEL n
+SRT_ADDITIONAL_INFO n
+SRT_ADAPTIVE_CANCEL n
+SRT_IGNORE_DIFF_IF_MULIPLE_REFL y
+SRT_IGNORE_TRANS_IF_MULIPLE_REFL y
+SRT_RESOLUTION_SCATTERING 10.000000
+SRT_CONSIDER_RCS n
+***** Min. Length for wedges to be considered (in SRT only) *******************
+MIN_LENGTH_WEDGES 0.010000
+
+*******************************************************************************
+********* PARAMETERS OF THE VRT MODEL *****************************************
+*******************************************************************************
+VRT_PROP_MODEL VRT_DIRECT_RAY y
+VRT_PROP_MODEL VRT_SINGLE_REFLECTION y
+VRT_PROP_MODEL VRT_SINGLE_DIFFRACTION y
+VRT_PROP_MODEL VRT_REFLECTION_DIFFRACTION n
+VRT_PROP_MODEL VRT_DIFFRACTION_REFLECTION n
+VRT_PROP_MODEL VRT_DOUBLE_DIFFRACTION n
+VRT_PROP_MODEL VRT_KNIFE_EDGE_DIFFRACTION n
+VRT_PROP_MODEL VRT_ONLY_FORWARD_PROPAGATION y
+VRT_PROP_MODEL VRT_TOPO_INTERACTIONS y
+VRT_PROP_MODEL VRT_VECTOR_INTERACTIONS y
+VRT_PROP_MODEL VRT_ADDITIONAL_INFO n
+VRT_PROP_MODEL VRT_MAX_TRANSMISSIONS 0
+VRT_PROP_MODEL VRT_MIN_ANGLE_DIFFRACTION 20.000
+VRT_PROP_MODEL VRT_EXTENSION_BEHIND_RECEIVER 0.000
+VRT_PROP_MODEL VRT_SUPERPOSITION_PHASE y
+VRT_PROP_MODEL VRT_KE_SUBMODEL 2
+VRT_PROP_MODEL VRT_KE_LIMITED_DIFFRACTIONS 0
+VRT_PROP_MODEL VRT_KE_MAX_DIFFRACTIONS 20
+VRT_PROP_MODEL VRT_KE_EXPONENT_BEFORE 2.00
+VRT_PROP_MODEL VRT_KE_EXPONENT_AFTER 4.00
+VRT_PROP_MODEL VRT_KE_BREAKPOINT_MODE 0
+VRT_PROP_MODEL VRT_KE_BREAKPOINT_OFFSET 0.00
+VRT_PROP_MODEL VRT_KE_BREAKPOINT_FACTOR 12.57
+VRT_PROP_MODEL VRT_KE_BREAKPOINT_DISTANCE 500.00
+*******************************************************************************
+
+DOMINANT_PATH_SUB_MODEL 0
+
+********************************************************
+* PARAMETERS OF DOMINANT PATH MODEL                    *
+* No sub model parameters written to file.             *
+********************************************************
+DOMINANT_PATH_MODEL EXPONENTS_INDOOR 2.000 2.100 2.200 4.000 4.000 4.000
+DOMINANT_PATH_MODEL WAVEGUIDING_FACTOR n 1.000 3.000 1.000 
+DOMINANT_PATH_MODEL DYNAMIC_RESOLUTION 0
+DOMINANT_PATH_MODEL HANGLECOMPUTATION_OFFSET 0.500
+DOMINANT_PATH_MODEL HANGLECOMPUTATION_BREAKPOINT 75.000
+DOMINANT_PATH_MODEL ADDITIONAL_HEIGHT 0.000
+DOMINANT_PATH_MODEL MAX_INTERACTIONS 0
+DOMINANT_PATH_MODEL MIN_FIELDSTRENGTH -10000.000
+DOMINANT_PATH_MODEL RESULT_OFFSET 0.000
+DOMINANT_PATH_MODEL INDOOR_HORIZONTAL_DIFFRLOSS 13.000 13.000 13.000 13.000 13.000
+DOMINANT_PATH_MODEL BLPM 0.0150
+DOMINANT_PATH_MODEL DPM_SCENARIO 1
+DOMINANT_PATH_MODEL DPM_PATH_DEF_FREQUENCY n
+DOMINANT_PATH_MODEL DPM_PATH_FREQUENCY 3500.0
+DOMINANT_PATH_MODEL FLOOR_HANDLING_GENERAL 1
+DOMINANT_PATH_MODEL FLOOR_HANDLING_TRX 1
+DOMINANT_PATH_MODEL INTERACTION_LOSS_WEIGHT 0 1.00 10.00
+
+*******************************************************************************
+***** Logarithmic or linear consideration of rays *****************************
+*******************************************************************************
+** (Based on powet = 0, based on field strength = 1) **************************
+RAYS_POWER_FIELD 0
+** (Logarithmic values = 0, Linear values = 1) ********************************
+RAYS_LOG_LIN 0
+RAYS_MAX_PATH_LOSS 200.000
+RAYS_MAX_DYNAMIC y 100.000
+RAYS_MAX_NUMBER y 20
+RAYS_RX_GAIN_LOWER_HEMISPHERE 0.000
+*******************************************************************************
+***** Breakpoint for indoor models (e.g. for DPM in tunnels) ******************
+*******************************************************************************
+OFFSET_BREAKPOINT 0.000
+FACTOR_BREAKPOINT 12.566
+MODE_BREAKPOINT 0
+DISTANCE_BREAKPOINT 500.000
